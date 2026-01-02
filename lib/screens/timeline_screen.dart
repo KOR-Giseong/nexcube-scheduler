@@ -600,6 +600,8 @@ class CurrentTimeIndicator extends StatelessWidget {
 
   /// 현재 시간의 Y 좌표 계산
   double get currentTimePosition {
+    // TODO: 실제 API 연동 시 서버 시간 기준으로 현재 시간 동기화 필요
+    // ex) 서버 타임스탬프 또는 NTP 기반 시간 사용 (디바이스 시간 오차 방지)
     final now = DateTime.now();
     final minutesFromMidnight = now.hour * 60 + now.minute;
     return (minutesFromMidnight / 60.0) * TimelineBody.hourHeight;
